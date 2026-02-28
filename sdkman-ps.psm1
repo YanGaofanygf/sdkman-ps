@@ -1,4 +1,5 @@
-. (Join-Path $PSScriptRoot 'SdkMan-Main.ps1')
+$scriptPath = Join-Path $PSScriptRoot 'src'
+. (Join-Path $scriptPath 'SdkMan-Main.ps1')
 
 $home_dir = Join-Path $HOME ".sdkman"
 $script:Config = @{
