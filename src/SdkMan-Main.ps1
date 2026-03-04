@@ -52,11 +52,11 @@ function Invoke-SdkMan {
         "version" {
             Invoke-Version @QUALIFIER
         }
+        "use" {
+            Invoke-Use @QUALIFIER
+        }
         "install" {
             Install-Sdk @QUALIFIER
-        }
-        "use" {
-            Use-Sdk @QUALIFIER
         }
         default {
             Write-Output "Unknown command: $COMMAND"
