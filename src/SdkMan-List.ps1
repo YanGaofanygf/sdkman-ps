@@ -4,7 +4,7 @@ function Invoke-List {
         [string]$candidate
     )
     if ($candidate) {
-        $response = Invoke-WebRequest -Uri "$($script:Config.SDKMAN_CANDIDATES_API)/candidates/$candidate/$($script:Config.SDKMAN_PLATFORM)/versions/list" -UseBasicParsing
+        $response = Invoke-WebRequest -Uri "$($script:Config.SDKMAN_CANDIDATES_API)/candidates/$candidate/$($script:Config.SDKMAN_PLATFORM)/versions/list?current=&installed=" -UseBasicParsing
         Write-Host "$($response.Content)"
     } else {
         $response = Invoke-WebRequest -Uri "$($script:Config.SDKMAN_CANDIDATES_API)/candidates/list" -UseBasicParsing
