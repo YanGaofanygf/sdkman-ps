@@ -21,7 +21,7 @@ function Install-Sdk {
     $url = "$($script:Config.SDKMAN_BROKER_API)/download/$Candidate/$Version/$($script:Config.SDKMAN_PLATFORM)"
     Write-Output "Downloading $Candidate $Version to $binary_input..."
     Write-Output "URL: $url"
-    Invoke-WebRequest -Uri $url -OutFile $binary_input -UseBasicParsing -Verbose
+    Invoke-WebRequest -Uri $url -OutFile $binary_input -UseBasicParsing -Verbose -ErrorAction Stop
     Write-Output "Download completed successfully."
     Move-Item -Path $binary_input -Destination $zip_output -Force
     if (Test-Path -Path $out_dir) {
